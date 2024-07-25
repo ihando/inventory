@@ -1,4 +1,3 @@
--- Active: 1711568351062@@127.0.0.1@5432@ihando
 CREATE DATABASE inventory;
 
 CREATE TABLE types (

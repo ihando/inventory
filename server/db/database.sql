@@ -9,9 +9,11 @@ CREATE TABLE types (
 CREATE TABLE pokemon (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    type_id INTEGER NOT NULL,
+    type1_id INTEGER NOT NULL,
+    type2_id INTEGER NOT NULL,
     level INTEGER DEFAULT 1,
-    FOREIGN KEY (type_id) REFERENCES Types(id)
+    FOREIGN KEY (type1_id) REFERENCES types(id)
+    FOREIGN KEY (type2_id) REFERENCES types(id)
 );
 
 CREATE TABLE trainers (

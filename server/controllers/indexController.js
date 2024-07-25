@@ -1,3 +1,3 @@
 exports.getHandler = (req, res) => {
-  res.send("view2");
+  res.send("homepage");
 };

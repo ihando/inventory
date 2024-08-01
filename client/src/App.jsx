@@ -1,13 +1,35 @@
-import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import Homepage from "./pages/Homepage/Homepage";
+import Errorpage from "./pages/Errorpage/Errorpage";
+import Pokemon from "./pages/Pokemon/Pokemon";
 
-function App() {
-  const [count, setCount] = useState(0);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Homepage />,
+      },
+      {
+        path: "pokemon",
+        element: <Pokemon />,
+      },
+      /*
+      {
+        path: "pokemon/:id",
+        element: <IndividualPokemon />,
+      },*/
+    ],
+    errorElement: <Errorpage />,
+  },
+]);
 
-  return (
-    <>
-      <div>hi</div>
-    </>
-  );
-}
+// App component to provide the router
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
 export default App;

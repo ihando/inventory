@@ -17,7 +17,6 @@ async function insertPokemon(name, type1, type2, level) {
       INSERT INTO pokemon (name, type_id, type2_id, level) 
       VALUES ($1, $2, $3, $4)
     `;
-
   await pool.query(query, [name, type1, type2, level]);
 }
 
